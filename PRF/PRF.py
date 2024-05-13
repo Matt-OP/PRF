@@ -94,8 +94,8 @@ class DecisionTreeClassifier:
         self.feature_importances_ = [0] * self.n_features_
         self.is_node_arr_init = False
 
-        pnode = .ones(self.n_samples_)
-        is_max = .ones(self.n_samples_, dtype = int)
+        pnode = numpy.ones(self.n_samples_)
+        is_max = numpy.ones(self.n_samples_, dtype = int)
 
         py_flat = py.copy()
         py_flat[py < 0.5] = 0
