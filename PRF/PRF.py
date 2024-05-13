@@ -54,12 +54,12 @@ class DecisionTreeClassifier:
 
         node_list = self.get_nodes()
 
-        node_tree_results = numpy.ones([len(node_list),self.n_classes_] )*(-1)
-        node_feature_idx = numpy.ones(len(node_list), dtype = int)*(-1)
-        node_feature_th = numpy.zeros(len(node_list))
-        node_true_branch = numpy.ones(len(node_list), dtype = int)*(-1)
-        node_false_branch = numpy.ones(len(node_list), dtype = int)*(-1)
-        node_p_right = numpy.zeros(len(node_list))
+        node_tree_results = .ones([len(node_list),self.n_classes_] )*(-1)
+        node_feature_idx = .ones(len(node_list), dtype = int)*(-1)
+        node_feature_th = .zeros(len(node_list))
+        node_true_branch = .ones(len(node_list), dtype = int)*(-1)
+        node_false_branch = .ones(len(node_list), dtype = int)*(-1)
+        node_p_right = .zeros(len(node_list))
 
         for idx, n in enumerate(node_list):
 
@@ -94,8 +94,8 @@ class DecisionTreeClassifier:
         self.feature_importances_ = [0] * self.n_features_
         self.is_node_arr_init = False
 
-        pnode = numpy.ones(self.n_samples_)
-        is_max = numpy.ones(self.n_samples_, dtype = int)
+        pnode = .ones(self.n_samples_)
+        is_max = .ones(self.n_samples_, dtype = int)
 
         py_flat = py.copy()
         py_flat[py < 0.5] = 0
@@ -167,7 +167,7 @@ class RandomForestClassifier:
         nof_objects = py.shape[0]
         objects_indices = numpy.arange(nof_objects)
         objects_chosen = numpy.random.choice(objects_indices, nof_objects, replace=True)
-        valid_indices = np.intersect1d(objects_chosen, np.arange(len(pX)))
+        valid_indices = numpy.intersect1d(objects_chosen, np.arange(len(pX)))
         X_chosen = X.iloc[valid_indices, :]
         pX_chosen = pX[valid_indices]
         py_chosen = py[valid_indices]
