@@ -167,9 +167,10 @@ class RandomForestClassifier:
         nof_objects = py.shape[0]
         objects_indices = numpy.arange(nof_objects)
         objects_chosen = numpy.random.choice(objects_indices, nof_objects, replace=True)
-        X_chosen = X.iloc[objects_chosen, :]
-        pX_chosen = pX[objects_chosen]
-        py_chosen = py[objects_chosen]
+        valid_indices = np.intersect1d(objects_chosen, np.arange(len(pX)))
+        X_chosen = X.iloc[valid_indices, :]
+        pX_chosen = pX[valid_indices]
+        py_chosen = py[valid_indices]
 
         return X_chosen, pX_chosen, py_chosen
 
