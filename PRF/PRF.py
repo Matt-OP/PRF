@@ -54,12 +54,12 @@ class DecisionTreeClassifier:
 
         node_list = self.get_nodes()
 
-        node_tree_results = .ones([len(node_list),self.n_classes_] )*(-1)
-        node_feature_idx = .ones(len(node_list), dtype = int)*(-1)
-        node_feature_th = .zeros(len(node_list))
-        node_true_branch = .ones(len(node_list), dtype = int)*(-1)
-        node_false_branch = .ones(len(node_list), dtype = int)*(-1)
-        node_p_right = .zeros(len(node_list))
+        node_tree_results = numpy.ones([len(node_list),self.n_classes_] )*(-1)
+        node_feature_idx = numpy.ones(len(node_list), dtype = int)*(-1)
+        node_feature_th = numpy.zeros(len(node_list))
+        node_true_branch = numpy.ones(len(node_list), dtype = int)*(-1)
+        node_false_branch = numpy.ones(len(node_list), dtype = int)*(-1)
+        node_p_right = numpy.zeros(len(node_list))
 
         for idx, n in enumerate(node_list):
 
