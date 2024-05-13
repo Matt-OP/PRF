@@ -89,7 +89,7 @@ class DecisionTreeClassifier:
         """
 
         self.n_classes_ = py.shape[1]
-        self.n_features_ = len(X[0])
+        self.n_features_ = X.shape[1]
         self.n_samples_ = len(X)
         self.feature_importances_ = [0] * self.n_features_
         self.is_node_arr_init = False
